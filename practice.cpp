@@ -23,8 +23,10 @@ int main()
 	int height, width, sum = 0, step = 0, sort1, sort2, rank; 
 	int i, j, k, p, e;
 	double tempmath, eps = 0.00001;
-	cout << "Введите количество строк и количество столбцов матрицы: ";
-	cin >> height >> width;
+	cout << "Введите количество строк матрицы: ";
+	cin >> height;
+	cout << "Введите количество столбцов матрицы: ";
+	cin >> width;
 	if (height <= 0 || width <= 0)
 	{
 		cout << "Ошибка. Неверные параметры матрицы." << endl;
@@ -35,12 +37,12 @@ int main()
 
 	// ввод матрицы
 
-	cout << "Введите " << width * height << " элементов матрцицы: ";
 	for (i = 0; i < height; i++)
 	{
 		vector <double> temp;
 		for (j = 0; j < width; j++)
 		{
+			cout << "Введите элемент матрицы (" << i + 1 << ", " << j + 1 << "): ";
 			cin >> e;
 			temp.push_back(e);
 		}
@@ -49,12 +51,12 @@ int main()
 	cout << "\n";
 
 	// вывод первоначальной матрицы
-
+	cout << "Заданная матрица: " << endl;
 	for (i = 0; i < height; i++)
 	{
 		for (j = 0; j < width; j++)
 		{
-			cout << matrix[i][j] << " ";
+			cout << matrix[i][j] << "\t";
 		}
 		cout << endl;
 	}
@@ -191,7 +193,7 @@ int main()
 	{
 		for (j = 0; j < width; j++)
 		{
-			cout << matrix[i][j] << " ";
+			cout << matrix[i][j] << "\t";
 		}
 		cout << endl;
 	}
